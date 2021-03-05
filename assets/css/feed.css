@@ -1,0 +1,102 @@
+* {
+    background-color: #14181C;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+
+table.table,
+th,
+tr {
+    background-color: rgb(222, 176, 243);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+
+    border-style: solid;
+    border-color: #1aff66;
+
+    width: 550px;
+
+}
+
+.btn-view {
+    background-color: rgb(70, 153, 248);
+
+    transition-duration: 0.2s;
+
+    border-radius: 10px;
+    border-color: rgb(70, 153, 248);
+}
+
+.btn-view:hover {
+    background-color: blue;
+}
+
+.btn-delete {
+    background-color: rgb(245, 57, 57);
+
+    transition-duration: 0.2s;
+
+    border-radius: 10px;
+    border-color: rgb(245, 57, 57);
+
+    margin-left: 5px;
+}
+
+.btn-delete:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+a.previous-round {
+    display: inline;
+    text-decoration: none;
+    font-size: 20px;
+
+    background-color: #00FF00;
+
+    transition-duration: 0.2s;
+
+    padding: 24px;
+
+    border-radius: 100px;
+
+    margin-top: 200px;
+    margin-left: 50px;
+
+
+}
+
+a.previous-round:hover {
+    background-color: #188318;
+}
+
+a.next-round {
+    text-decoration: none;
+
+    background-color: rgba(143, 63, 209, 0.774);
+    color: black;
+
+    transition-duration: 0.2s;
+
+    padding: 14px;
+
+    border-radius: 100px;
+
+    margin-top: 200px;
+
+    margin-left: 1100px;
+
+
+}
+
+a.next-round:hover {
+    background-color: orangered;
+}
+
+img {
+    margin-top: 20px;
+    width: 500px;
+    height: 500px;
+
+    opacity: 50%;
+}

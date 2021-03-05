@@ -1,0 +1,137 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #14181C;
+}
+
+
+div.login-screen {
+    background-color: whitesmoke;
+    text-align: center;
+
+    padding: 40px 20px 40px 20px;
+
+
+    margin-bottom: 100px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 200px;
+    height: 360px;
+
+    border-color: slateblue;
+    border-width: 8px;
+    border-style: solid;
+    border-radius: 25px;
+
+}
+
+form {
+    background-color: whitesmoke;
+    margin-top: 50px;
+}
+
+
+input {
+    margin-top: 7px;
+    background-color: whitesmoke;
+}
+
+.btn-login {
+
+
+    margin-top: 30px;
+    background-color: #00FF00;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    border-radius: 10px;
+    border-color: #00FF00;
+
+    transition-duration: 0.2s;
+}
+
+.btn-login:hover {
+    background-color: rgb(20, 134, 16)
+}
+
+.btn-sin {
+    margin-top: 30px;
+    background-color: #2bdae3;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    border-radius: 10px;
+    border-color: #2bdae3;
+
+    transition-duration: 0.2s;
+}
+
+.btn-sin:hover {
+    background-color: #2689fb;
+}
+
+.btn-finish {
+
+
+    margin-top: 30px;
+    background-color: #00FF00;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    border-radius: 10px;
+    border-color: #00FF00;
+
+    transition-duration: 0.2s;
+}
+
+.btn-finish:hover {
+    background-color: rgb(20, 134, 16)
+}
+
+.btn-back {
+
+
+    margin-top: 30px;
+    background-color: rgb(214, 43, 43);
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    border-radius: 10px;
+    border-color: red;
+
+    transition-duration: 0.2s;
+}
+
+.btn-back:hover {
+    background-color: rgb(253, 0, 0)
+}
+
+
+div.pezin {
+    background-color: #2bee8d;
+
+
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+
+    border-radius: 10px;
+
+    transition-duration: 0.2s;
+}
+
+div.pezin:hover {
+    background-color: #00FF00;
+}
+
+a.link-tome {
+
+    margin-left: 11px;
+    color: black;
+    text-decoration: none;
+}

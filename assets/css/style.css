@@ -96,18 +96,18 @@ input {
 
 
     margin-top: 30px;
-    background-color: rgb(214, 43, 43);
+    background-color: rgb(253, 0, 0);
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     border-radius: 10px;
-    border-color: red;
+    border-color: rgb(253, 0, 0);
 
     transition-duration: 0.2s;
 }
 
 .btn-back:hover {
-    background-color: rgb(253, 0, 0)
+    background-color: rgb(214, 43, 43);
 }
 
 

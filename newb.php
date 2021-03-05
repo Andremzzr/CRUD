@@ -13,5 +13,13 @@ if (isset($_POST['btn-fin'])) {
             header('Status: 303 Moved Permanently', false, 303);
             header('Location: feed.php');
         }
+        else{
+            ?>
+            <script type="text/javascript" src="/js/newb.js"></script>
+            <?php
+        }
     }
+    
 }
+
+?>

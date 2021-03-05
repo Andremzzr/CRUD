@@ -10,12 +10,15 @@
 </head>
 <body>
     <header >
+        <div class="buttons">
         <a href="index.php" class="previous-round">&#8249;</a>
         <a href="newb.php" class="next-round">Cadastro</a>
+            </div>
     </header>
     <main>
     
-    <table class="table">
+    <table >
+        <tbody class="table">
     <tr>
     <th>Branch Name</th>
     <th>City</th>
@@ -25,10 +28,12 @@
   <tr>
       <th>Casa Elétrica</th>
       <th>Porto Alegre</th>
-      <form action="POST">
+      <form method="POST">
       <th><button class="btn-view" name="btn-view">View</button><button class="btn-delete" name="btn-delete">Delete</button></th>
     </form>
     </tr>
+    
+    </tbody>
     </table>
     
 </main>

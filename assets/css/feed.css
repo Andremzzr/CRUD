@@ -1,5 +1,5 @@
 * {
-    background-color: #14181C;
+    background-color: #5E565A;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 18px;
 }
@@ -38,12 +38,12 @@ tr {
 }
 
 .btn-delete {
-    background-color: rgb(245, 57, 57);
+    background-color: #FF934F;
 
     transition-duration: 0.2s;
 
     border-radius: 10px;
-    border-color: rgb(245, 57, 57);
+    border-color: #FF934F;
 
     margin-left: 5px;
 }
@@ -93,7 +93,7 @@ a.previous-round:hover {
 a.next-round {
     text-decoration: none;
 
-    background-color: rgba(87, 189, 236, 0.774);
+    background-color: #F7FF58;
     color: black;
 
     transition-duration: 0.2s;
@@ -110,7 +110,7 @@ a.next-round {
 }
 
 a.next-round:hover {
-    background-color: rgb(52, 106, 167);
+    background-color: #9fa529;
 
     padding: 7px 0px 7px 0px;
 }

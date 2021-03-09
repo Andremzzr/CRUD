@@ -3,12 +3,12 @@
 }
 
 body {
-    background-color: #14181C;
+    background-color: #5E565A;
 }
 
 
 div.login-screen {
-    background-color: whitesmoke;
+    background-color: #EFECCA;
     text-align: center;
 
     padding: 40px 20px 40px 20px;
@@ -22,7 +22,7 @@ div.login-screen {
     width: 200px;
     height: 360px;
 
-    border-color: slateblue;
+    border-color: #A9CBB7;
     border-width: 8px;
     border-style: solid;
     border-radius: 25px;
@@ -30,7 +30,7 @@ div.login-screen {
 }
 
 form {
-    background-color: whitesmoke;
+    background-color: #EFECCA;
     margin-top: 50px;
 }
 
@@ -78,30 +78,30 @@ input {
 
 
     margin-top: 30px;
-    background-color: #00FF00;
+    background-color: #F7FF58;
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     border-radius: 10px;
-    border-color: #00FF00;
+    border-color: #F7FF58;
 
     transition-duration: 0.2s;
 }
 
 .btn-finish:hover {
-    background-color: rgb(20, 134, 16)
+    background-color: #b4bd13;
 }
 
 .btn-back {
 
 
     margin-top: 30px;
-    background-color: rgb(253, 0, 0);
+    background-color: #FF934F;
     font-size: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
     border-radius: 10px;
-    border-color: rgb(253, 0, 0);
+    border-color: #FF934F;
 
     transition-duration: 0.2s;
 }

@@ -24,6 +24,16 @@ tr {
 
 }
 
+th.title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px
+}
+
+th {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
 .btn-view {
     background-color: rgb(70, 153, 248);
 

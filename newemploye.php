@@ -11,7 +11,7 @@ if (isset($_POST['btn-back'])) {
 }
 if(isset($_POST['btn-fin'])) {
     $db = new Database;
-    $db->criarEmploye($_POST[''], $_POST['']);
+    $db->addEmploye($_POST['employe'], $_POST['occupation']);
 
 
     header('Status: 303 Moved Permanently', false, 303);

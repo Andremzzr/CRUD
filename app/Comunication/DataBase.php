@@ -9,7 +9,9 @@ namespace App\Comunication;
 use PDO;
 
 
-
+/**
+ * This class make all the connections with the database 
+ */
 class DataBase
 {
     /**
@@ -32,7 +34,7 @@ class DataBase
      * @param  string $cidade
      * @return void
      */
-    private function addBranch($nome, $cidade)
+    public function addBranch($nome, $cidade)
     {
         
         $pdo = new DataBase();
@@ -90,6 +92,9 @@ class DataBase
         $statament = $db->prepare("INSERT INTO `login` (`email`, `password`, `user`) VALUES (:email, :password, :user)");
 
 
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+
+
         $statament->bindValue(":email", $email,   PDO::PARAM_STR);
         $statament->bindValue(":password", $password, PDO::PARAM_STR);
         $statament->bindValue(":user", $user, PDO::PARAM_STR);
@@ -130,6 +135,25 @@ class DataBase
     }
 
     /**
+     * Delete a Branch from database
+     *
+     * @param  string $nome
+     * @return void
+     */
+    public function deleteBranch(string $nome)
+    {
+        $db = new DataBase();
+        $db->connect('company.db');
+
+        $statament = $db->prepare("DELETE * FROM `branchs` WHERE `nome` = :nome");
+        
+        $statament->bindValue(":nome", $nome, PDO::PARAM_STR);
+        
+        $result = $statament->execute();
+    }
+
+
+    /**
      * Add Employe to a branch
      *
      * @param  string $nome
@@ -150,5 +174,7 @@ class DataBase
         $return =  $statament->execute();
 
     }
+
+
 }
 

@@ -47,18 +47,24 @@ th {
     background-color: blue;
 }
 
-.btn-delete {
+a.btn-delete {
     background-color: #FF934F;
 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    color: black;
     transition-duration: 0.2s;
+    text-decoration: none;
 
     border-radius: 10px;
     border-color: #FF934F;
 
+
+
     margin-left: 5px;
 }
 
-.btn-delete:hover {
+a.btn-delete:hover {
     background-color: rgb(255, 0, 0);
 }
 

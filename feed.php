@@ -1,4 +1,4 @@
-<?php
+a<?php
 
 
 require_once __DIR__.'/assets/html/feed.html';
@@ -12,12 +12,13 @@ $db = new DataBase();
 
 foreach ($db->getrows() as $row) {
     $resultados.= ' <tr>
-                    <th>'.$row['nome'].'</th>
+                    <th name="nome">'.$row['nome'].'</th>
                     <th>'.$row['city'].'</th>
-                    <th><form method="POST" style:"background-color:azure;">
-                    <button class="btn-view" name="btn-view">View</button><button class="btn-delete" name="btn-delete">Delete</button>
-                    
-                            </form></th>
+                   
+                    <th>
+                    <button class="btn-view" name="btn-view">View</button><a href="delete.php?nome='.$row['nome'].'" class="btn-delete">Delete</a>
+                    </th>
+                           
                     </tr>';
 }
 
@@ -35,6 +36,7 @@ foreach ($db->getrows() as $row) {
     </header>
     <main>
     
+    <form action ="" method="POST">
     <table >
         <thead class="table">
     <tr>
@@ -52,7 +54,7 @@ foreach ($db->getrows() as $row) {
 
     
     </table>
-    
+    <form>
     </main>
     </body>
 
@@ -63,7 +65,7 @@ foreach ($db->getrows() as $row) {
         header('Status: 303 Moved Permanently', false, 303);
         header('Location: view.php');
     }
-
+    
 
     ?>
 

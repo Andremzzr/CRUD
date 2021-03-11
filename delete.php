@@ -12,12 +12,13 @@ $db= new DataBase();
 
 $nome =filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_STRING);
 
-
-$db->deleteBranch($nome);
-
-if ($db->deleteBranch($nome)) {
+try {
+    $db->deleteBranch($nome);
+    header('Status: 303 ', false, 303);
+    header('Location: feed.php');
+} catch (Exception $e) {
     ?>
-    <script href="succes.js"></script>
-
+    <script> alert("Ocorreu um erro, tente novamente");</script>
     <?php
 }
+

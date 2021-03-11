@@ -5,9 +5,21 @@ require __DIR__.'/vendor/autoload.php';
 use App\Comunication\DataBase;
 
 
-$db = new DataBase();
+$pdo = new PDO('sqlite:test2.db');
 
-print_r($db->getrows());
+
+$nome = "Testenome";
+$cidade = "TesteCidade";
+
+$statament = $pdo->prepare("INSERT INTO `test` (`nome`, `city`) VALUES (:nome, :city)");
+
+$statament->bindValue(":nome", $nome,   PDO::PARAM_STR);
+$statament->bindValue(":city", $cidade, PDO::PARAM_STR);
+        
+$result = $statament->execute();   
+
+
+
 
 
 

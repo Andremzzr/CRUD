@@ -1,6 +1,4 @@
 vendor
-company.db
-login.db
-employe.db
+db
 vendor
 .env

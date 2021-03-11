@@ -12,11 +12,12 @@ $db = new DataBase();
 
 foreach ($db->getrows() as $row) {
     $resultados.= ' <tr>
+                    <th>'.$row['id'].'</th>
                     <th name="nome">'.$row['nome'].'</th>
                     <th>'.$row['city'].'</th>
                    
                     <th>
-                    <button class="btn-view" name="btn-view">View</button><a href="delete.php?nome='.$row['nome'].'" class="btn-delete">Delete</a>
+                    <a class="btn-view" name="btn-view" href="view.php?nome='.$row['nome'].'">View</a> <a href="edit.php?nome='.$row['nome'].'&cidade='.$row['city'].'&id='.$row['id'].'" class="btn-edit">Edit</a> <a href="delete.php?nome='.$row['nome'].'" class="btn-delete">Delete</a>
                     </th>
                            
                     </tr>';
@@ -40,6 +41,7 @@ foreach ($db->getrows() as $row) {
     <table >
         <thead class="table">
     <tr>
+    <th class ="title">Id</th>    
     <th class="title">Branch Name</th>
     <th class="title">City</th>
     <th class="title">Status</th>

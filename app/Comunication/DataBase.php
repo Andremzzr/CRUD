@@ -22,7 +22,7 @@ class DataBase
      */
     public function connect($db_name)
     {
-        $pdo = new PDO('sqlite:'.$db_name);
+        $pdo = new PDO('sqlite:db/'.$db_name);
 
         return $pdo;
     }
@@ -34,13 +34,14 @@ class DataBase
      * @param  string $cidade
      * @return void
      */
-    public function addBranch($nome, $cidade)
+    public function addBranch(string $nome, string $cidade)
     {
         
         $pdo = new DataBase();
         $pdo = $pdo->connect('company.db');
 
-        
+        $nome = filter_var($nome, FILTER_SANITIZE_STRING);
+        $cidade = filter_var($cidade, FILTER_SANITIZE_STRING);
 
         $statament = $pdo->prepare("INSERT INTO `branchs` (`nome`, `city`) VALUES (:nome, :city)");
 
@@ -87,7 +88,7 @@ class DataBase
     public function setLogin(string $email, string $user, string $password)
     {
         $db = new DataBase();
-        $db = $db->connect('login.db');
+        $db = $db->connect('login.db'); 
 
         $statament = $db->prepare("INSERT INTO `login` (`email`, `password`, `user`) VALUES (:email, :password, :user)");
 
@@ -133,6 +134,34 @@ class DataBase
             return true;
         }
     }
+    
+    /**
+     * Edit the branch in database
+     *
+     * @param  integer $id 
+     * @param  string  $nome
+     * @param  string  $cidade
+     * @return void
+     */
+    public function editBranch(int $id,string $nome,string $cidade)
+    {
+        $db = new DataBase();
+        $db = $db->connect('company.db');
+
+        $nome = filter_var($nome, FILTER_SANITIZE_STRING);
+        $cidade = filter_var($cidade, FILTER_SANITIZE_STRING);
+
+       
+
+        $statament = $db->prepare("UPDATE `branchs` SET `nome` = :nome, `city` = :city WHERE `id` = :id");
+
+        
+        $statament->bindValue(":nome", $nome,   PDO::PARAM_STR);
+        $statament->bindValue(":city", $cidade, PDO::PARAM_STR);
+        $statament->bindValue(":id", $id,   PDO::PARAM_INT);
+        $result = $statament->execute();
+
+    }
 
     /**
      * Delete a Branch from database
@@ -143,9 +172,9 @@ class DataBase
     public function deleteBranch(string $nome)
     {
         $db = new DataBase();
-        $db->connect('company.db');
+        $db =$db->connect('company.db');
 
-        $statament = $db->prepare("DELETE * FROM `branchs` WHERE `nome` = :nome");
+        $statament = $db->prepare("DELETE FROM branchs WHERE `nome` = :nome");
         
         $statament->bindValue(":nome", $nome, PDO::PARAM_STR);
         
@@ -156,18 +185,22 @@ class DataBase
     /**
      * Add Employe to a branch
      *
+     * @param  string $branch
      * @param  string $nome
      * @param  string $cargo
      * @return void
      */
-    public function addEmploye(string $nome, string $cargo)
+    public function addEmploye(string $branch,string $nome, string $cargo)
     {
         $db = new DataBase();
-        $db->connect('employe.db');
+        $db = $db->connect('employe.db');
 
-        $statament = $db->prepare("INSERT INTO `employe` (`nome`, `cargo`) VALUES (:nome, :cargo)");
+        $nome = filter_var($nome, FILTER_SANITIZE_STRING);
+        $cargo = filter_var($cargo, FILTER_SANITIZE_STRING);
 
+        $statament = $db->prepare("INSERT INTO `employe` (`branch`,`nome`, `cargo`) VALUES (:branch,:nome, :cargo)");
 
+        $statament->bindValue(":branch", $branch, PDO::PARAM_STR);
         $statament->bindValue(":nome", $nome,   PDO::PARAM_STR);
         $statament->bindValue(":cargo", $cargo, PDO::PARAM_STR);
         
@@ -175,6 +208,35 @@ class DataBase
 
     }
 
+    /**
+     * Return db lines in an array
+     *
+     * @param  string $branch
+     * @return array 
+     */
+    public function getEmployes(string $branch)
+    {
+        $pdo = new DataBase();
+        $pdo= $pdo->connect('employe.db');
 
+
+        $statament = $pdo->prepare("SELECT * FROM employe WHERE branch = :branch");
+
+        $statament->bindValue(":branch", $branch, PDO::PARAM_STR);
+
+        $statament->execute();
+
+        $rows = [];
+
+        if ($statament) {
+            while ($row = $statament->fetch(PDO::FETCH_ASSOC)) {
+                $rows[] = $row;
+            }
+
+           
+        }
+
+        return $rows;
+    }
 }
 

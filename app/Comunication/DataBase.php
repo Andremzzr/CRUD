@@ -227,17 +227,17 @@ class DataBase
     /**
      * Delete an employe
      *
-     * @param  string $nome
+     * @param  integer $nome
      * @return void
      */
-    public function deleteEmploye(string $nome)
+    public function deleteEmploye(int $id)
     {
         $db = new DataBase();
         $db =$db->connect('employe.db');
 
-        $statament = $db->prepare("DELETE FROM employe WHERE `nome` = :nome");
+        $statament = $db->prepare("DELETE FROM employe WHERE `id` = :id");
         
-        $statament->bindValue(":nome", $nome, PDO::PARAM_STR);
+        $statament->bindValue(":id", $id, PDO::PARAM_INT);
         
         $result = $statament->execute();
     }
@@ -271,6 +271,30 @@ class DataBase
         }
 
         return $rows;
+    }
+    
+    /**
+     * A function that edit employes
+     *
+     * @param  integer $id
+     * @param  string  $nome
+     * @param  string  $cargo
+     * @return void
+     */
+    public function editEmploye(int $id, string $nome, string $cargo)
+    {
+        $db = new DataBase();
+
+        $db = $db->connect('employe.db');
+
+        $statament = $db->prepare("UPDATE `employe` SET `nome` = :nome, `cargo` = :cargo WHERE `id` = :id");
+    
+        $statament->bindValue(":nome", $nome, PDO::PARAM_STR);
+        $statament->bindValue(":cargo", $cargo, PDO::PARAM_STR);
+        $statament->bindValue(":id", $id, PDO::PARAM_INT);
+        
+
+        $result = $statament->execute();
     }
 }
 

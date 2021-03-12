@@ -19,7 +19,7 @@ foreach ($db->getEmployes($branch) as $row) {
                     <th>'.$row['cargo'].'</th>
                    
                     <th>
-                    <a class="btn-view" name="btn-view" href="view.php?nome='.$row['branch'].'">View</a> <a href="edit.php?nome='.$row['nome'].'&cidade='.$row['cargo'].'&id='.$row['id'].'" class="btn-edit">Edit</a> <a href="delete.php?nome='.$row['nome'].'" class="btn-delete">Delete</a>
+                   <a href="editemploye.php?nome='.$row['nome'].'&cargo='.$row['cargo'].'&id='.$row['id'].'&branch='.$row['branch'].'" class="btn-edit">Edit</a> <a href="deletemp.php?id='.$row['id'].'&nome='.$row['branch'].'" class="btn-delete">Delete</a>
                     </th>
                            
                     </tr>';

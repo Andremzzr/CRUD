@@ -169,16 +169,32 @@ class DataBase
      * @param  string $nome
      * @return void
      */
-    public function deleteBranch(string $nome)
-    {
+    public function deleteBranch(string $nome, )
+    {   
+        // DELETE ALL EMPLOYES THAT ARE IN THE BRANCH YOU WANNA DELETE
         $db = new DataBase();
-        $db =$db->connect('company.db');
 
-        $statament = $db->prepare("DELETE FROM branchs WHERE `nome` = :nome");
-        
+        $db =$db->connect('employe.db');
+
+        $statament = $db->prepare("DELETE FROM employe WHERE `branch` = :nome");
+
         $statament->bindValue(":nome", $nome, PDO::PARAM_STR);
-        
+
         $result = $statament->execute();
+
+        //DELETING THE BRANCH
+
+        $db2 = new DataBase();
+
+        $db2 =$db2->connect('company.db');
+
+        $statament2 = $db2->prepare("DELETE FROM branchs WHERE `nome` = :nome");
+        
+        $statament2->bindValue(":nome", $nome, PDO::PARAM_STR);
+        
+        $result2 = $statament2->execute();
+
+
     }
 
 
@@ -206,6 +222,24 @@ class DataBase
         
         $return =  $statament->execute();
 
+    }
+
+    /**
+     * Delete an employe
+     *
+     * @param  string $nome
+     * @return void
+     */
+    public function deleteEmploye(string $nome)
+    {
+        $db = new DataBase();
+        $db =$db->connect('employe.db');
+
+        $statament = $db->prepare("DELETE FROM employe WHERE `nome` = :nome");
+        
+        $statament->bindValue(":nome", $nome, PDO::PARAM_STR);
+        
+        $result = $statament->execute();
     }
 
     /**

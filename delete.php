@@ -12,6 +12,7 @@ $db= new DataBase();
 
 $nome =filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_STRING);
 
+
 try {
     $db->deleteBranch($nome);
     header('Status: 303 ', false, 303);

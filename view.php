@@ -39,9 +39,9 @@ foreach ($db->getEmployes($branch) as $row) {
     <table class="table">
     <thead>
     <th>Id</th>
-    <th>Empresa</th>
-    <th>Funcionário</th>
-    <th>Cargo</th>
+    <th>Branch</th>
+    <th>Employe</th>
+    <th>Occupation</th>
     <th>Status</th>
   </tr>
   <tbody>
